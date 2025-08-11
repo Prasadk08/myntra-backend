@@ -16,7 +16,7 @@ import indexRoutes from "./routes/indexRoutes.js"
 const app = express()
 
 app.use(cors({
-  origin: "https://myntra-frontend-one.vercel.app", 
+  origin: "https://myntra-frontend-eta.vercel.app", 
   credentials: true
 }));
 
