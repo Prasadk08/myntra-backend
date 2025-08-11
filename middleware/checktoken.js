@@ -10,7 +10,10 @@ export const checkToken = async (req, res, next) => {
     req.user = verify;
     next();
   } catch (e) {
-    console.log(e);
-    res.status(401).json({ message: "Invalid Token" });
+    if (e.name === "TokenExpiredError") {
+      return res.status(401).json({ message: "Token expired" });
+    }
+
+    return res.status(401).json({ message: "Invalid token" });
   }
 };
